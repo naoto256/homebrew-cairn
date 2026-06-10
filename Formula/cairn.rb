@@ -1,20 +1,20 @@
 class Cairn < Formula
   desc "Local, symbol-aware code index for AI coding agents"
   homepage "https://github.com/naoto256/cairn"
-  version "0.1.1"
+  version "0.2.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/naoto256/cairn/releases/download/v#{version}/cairn-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "04708887da1a2a9e3791f86a71c0c7b35818e1af78dbb9719304d66a8d24d82f"
+      sha256 "1e9e5592a85b77b7e5150b3fc6235baf0758f19997a6759003608d6e63e30bf7"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/naoto256/cairn/releases/download/v#{version}/cairn-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "90aad8028aa8473d933a349664495a981ca86748677744caa1aa579fcb06edc3"
+      sha256 "fd1755428dc68d25216622b0ece2461b0671628c022c7f1b58219d29c2aa5e19"
     end
   end
 
@@ -50,6 +50,6 @@ class Cairn < Formula
   end
 
   test do
-    assert_match "cairn 0.1.1", shell_output("#{bin}/cairn --version")
+    assert_match "cairn 0.2.0", shell_output("#{bin}/cairn --version")
   end
 end
