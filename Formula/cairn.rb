@@ -1,20 +1,20 @@
 class Cairn < Formula
   desc "Local, symbol-aware code index for AI coding agents"
   homepage "https://github.com/naoto256/cairn"
-  version "0.4.2"
+  version "0.5.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/naoto256/cairn/releases/download/v#{version}/cairn-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "21db635924b1d89d3f0b824cdafc332628fd19aa100f3e7a2c1e8f3c353d3784"
+      sha256 "80357200fac7098a716bc99f4680ab89fc6f861b21bb386007776ca1ed793ed3"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/naoto256/cairn/releases/download/v#{version}/cairn-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "68493aa552713d602077f4e4546cb8382a1eec12bb85f096352314c310a6ace9"
+      sha256 "d3919f9ea5e986511162beca93931b0a60af10927b0ecad1d03da18e8c17fabf"
     end
   end
 
@@ -34,7 +34,7 @@ class Cairn < Formula
   def caveats
     <<~EOS
       To register a repo with cairn:
-        cairn ctl register-repo --alias <name> /path/to/repo
+        cairn ctl repo register --alias <name> /path/to/repo
 
       To start the daemon automatically:
         brew services start cairn
@@ -50,6 +50,6 @@ class Cairn < Formula
   end
 
   test do
-    assert_match "cairn 0.4.2", shell_output("#{bin}/cairn --version")
+    assert_match "cairn 0.5.0", shell_output("#{bin}/cairn --version")
   end
 end

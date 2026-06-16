@@ -15,7 +15,7 @@ brew services start cairn
 Then register a repo:
 
 ```sh
-cairn ctl register-repo --alias <name> /path/to/repo
+cairn ctl repo register --alias <name> /path/to/repo
 ```
 
 ## Layout
