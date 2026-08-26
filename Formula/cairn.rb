@@ -5,15 +5,15 @@ class Cairn < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/naoto256/cairn/releases/download/v0.8.4/cairn-v0.8.4-aarch64-apple-darwin.tar.gz"
-      sha256 "3bd6f44688eeee0da3a65c1af5a98a2f4892627bf41e45492b9f4cdda48772b4"
+      url "https://github.com/naoto256/cairn/releases/download/v0.8.5/cairn-v0.8.5-aarch64-apple-darwin.tar.gz"
+      sha256 "a6c5a68b45733c174e082c33d04e47985f1789461ac67effeb9e72024558d695"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/naoto256/cairn/releases/download/v0.8.4/cairn-v0.8.4-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e91d1a3dd2905d46a9441576389aff218c4d83b308de51603b4603d8d6e03a71"
+      url "https://github.com/naoto256/cairn/releases/download/v0.8.5/cairn-v0.8.5-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3582e4fed47f4fa100dc1d241eadaac8c13a1181a78963bce38e8536cbc18f1c"
     end
   end
 
@@ -49,6 +49,6 @@ class Cairn < Formula
   end
 
   test do
-    assert_match "cairn 0.8.4", shell_output("#{bin}/cairn --version")
+    assert_match "cairn 0.8.5", shell_output("#{bin}/cairn --version")
   end
 end
